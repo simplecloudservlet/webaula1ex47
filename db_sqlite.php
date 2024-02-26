@@ -22,10 +22,11 @@
 			$res->setFetchMode(PDO::FETCH_OBJ);
 	
 			while( $tupla = $res->fetch() ){ //recupera uma linha por vez
+				echo '<h3>';
 				foreach($tupla as $coluna){
-					echo '<h3>' . $coluna . "</h3>";
+					echo $coluna . ", ";
 				}
-				echo '<br>';
+				echo '</h3><br>';
 			}
 			echo "<h3>SELECT: Consulta realizada com sucesso!</h3>";
 		} else {
@@ -51,8 +52,10 @@
 
 		echo '<div class="selecionado"><h3>TODO5</h3>';
 
-		executarSQL($db, "INSERT INTO produtos VALUES ( 1, 'Lápis')");
-		executarSQL($db, "INSERT INTO produtos(id,nome) values ( 2, 'Borracha')");
+		//Apenas para o SQLite
+		executarSQL($db, "PRAGMA foreign_keys = ON;");
+		executarSQL($db, "INSERT INTO produtos VALUES ( 1, 'Lápis', 2)");
+		executarSQL($db, "INSERT INTO produtos(id,nome) values ( 2, 'Borracha', 1)");
 
 		echo '</div>';
 	}
@@ -67,8 +70,10 @@
 	function criarTabela($db){
 
 		echo '<div class="selecionado"><h3>TODO2</h3>';
-		executarSQL($db, "CREATE TABLE produtos( id int primary key not null, nome varchar(50) not null)"); 
+		executarSQL($db, "CREATE TABLE fornecedor( id int primary key not null, nome varchar(50) not null)");
+		executarSQL($db, "CREATE TABLE produtos( id int primary key not null, nome varchar(50) not null, id_fornecedor int not null, foreign key(id_fornecedor) references fornecedor(id))"); 
 		echo '</div>';
+
 	}
 
 	function main(){
