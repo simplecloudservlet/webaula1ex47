@@ -1,7 +1,4 @@
 
-<!-- Observacoes para o SQLite -->
-<!-- Antes de alterar qualquer tabela, executar a SQL: "PRAGMA foreign_keys = ON;" -->
-
 <!-- TODO1: PHP: Execute um script que conecte com um banco de dados suportado no servidor -->
 <!-- TODO2: PHP: Execute um script que crie uma tabela 'produtos' com os seguintes campos: id, nome-->
 <!-- TODO3: PHP: Execute um script que liste as tabelas criadas -->
