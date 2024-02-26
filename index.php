@@ -1,3 +1,7 @@
+
+<!-- Observacoes para o SQLite -->
+<!-- Antes de alterar qualquer tabela, executar a SQL: "PRAGMA foreign_keys = ON;" -->
+
 <!-- TODO1: PHP: Execute um script que conecte com um banco de dados suportado no servidor -->
 <!-- TODO2: PHP: Execute um script que crie uma tabela 'produtos' com os seguintes campos: id, nome-->
 <!-- TODO3: PHP: Execute um script que liste as tabelas criadas -->
@@ -13,6 +17,8 @@
 <!-- TODO12: PHP: Execute um script que remova o conteúdo das tuplas da tabela 'produtos' -->
 <!-- TODO13: PHP: Execute um script que remova a tabela 'produtos' -->
 
+<!-- TODO14: PHP: Apresente um exemplo com chave estrangeira. 
+                  'produtos(id_fornecedor)' tal que 'id_fornecedor' eh chave primaria na tabela 'fornecedor'-->
 
 <!DOCTYPE html>
 <html lang="bzs">
